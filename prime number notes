@@ -1,0 +1,120 @@
+The eight divisors of 24 are 1, 2, 3, 4, 6, 8, 12 and 24. 
+The ten numbers not exceeding 100 having exactly eight 
+divisors are 24, 30, 40, 42, 54, 56, 66, 70, 78 and 88. 
+Let f(n) be the count of numbers not exceeding n with 
+exactly eight divisors.
+You are given f(100) = 10, f(1000) = 180 and f(10^6) = 224427.
+Find f(10^12).
+
+24 1,24 2,12 3,8 4,6
+
+2x2x2x3
+
+2x12
+3x8
+4x6
+
+30 1,30 2,15 3,10 5,6
+5x3x2
+
+15x2
+5x6
+3x10
+
+40 1,40 2,20 4,10 5,8
+
+2x2x2x5
+2x2x5x5
+
+
+42 1,42 2,21 3,14 6,7
+7x3x2
+
+54 1,54 2,27 3,18 6,9
+3x3x3x2
+56
+8x7
+7x2x2x2
+
+66. 1,66 2,33 3,22 6,11
+2x3x11
+
+70
+2x5x7
+78
+
+88
+2x2x2x11
+
+2x11x13
+
+11x26
+22x13
+2x143
+1x286
+
+5x5x5x7
+1x875
+5x175
+25x35
+125x7
+
+142569
+
+generate them.
+primes 
+2	3	5	7	11	13	17	19	23	29
+31	37	41	43	47	53	59	61	67	71
+73	79	83	89	97	101	103	107	109	113
+127	131	137	139	149	151	157	163	167	173
+179	181	191	193	197	199	211	223	227	229
+233	239	241	251	257	263	269	271	277	281
+283	293	307	311	313	317	331	337	347	349
+353	359	367	373	379	383	389	397	401	409
+419	421	431	433	439	443	449	457	461	463
+467	479	487	491	499	503	509	521	523	541
+547	557	563	569	571	577	587	593	599	601
+607	613	617	619	631	641	643	647	653	659
+661	673	677	683	691	701	709	719	727	733
+739	743	751	757	761	769	773	787	797	809
+811	821	823	827	829	839	853	857	859	863
+877	881	883	887	907	911	919	929	937	941
+947	953	967	971	977	983	991	997 1009
+
+how many combinations are there:
+3 unique. compute it 
+or
+3 of one, 1 of other. This needs to be computed.
+
+1000
+
+
+24, 
+30, 
+40, 
+42, 
+54, 56, 66, 70, 78 and 88
+
+6x9
+2x3x3x3
+81,227,897
+2,226,229,582,039
+999,946,215,757
+982,107,730,243
+83,777,641,009
+number of prime factors is 3 or 4.
+
+7x7x2x5
+prime factor combination count
+
+if it has more than 3 types of unique prime factors, its not eligible
+
+prime factorization algorithm:
+div x 2 until mod != 0
+div x next biggest prime until half of number
+1,000,000,000,000
+
+primes less than 500,000,000,000
+
+compute primes to 500,000,000,000
+prime factorize each number. the number of prime factors needs to be 3 or 4 total.
