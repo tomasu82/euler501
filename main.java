@@ -41,9 +41,19 @@ public class main {
                 if (num1.multiply(num2).compareTo(top) == 1) {
                     break;
                 }
+                int new_ind;
 
-                for (int k=j+1 ; k<primes.length ; k++) {
+                int new_start= FindNewStart(primes, j, num1, num2, top);
+                
+                if (new_start != j) 
+                    count += new_start - j;
+
+                new_ind = new_start;
+                
+                for (int k=new_ind+1 ; k<primes.length ; k++) {
+
 System.out.print("\r"+ count + " " + progress[k % 4]);
+
                     BigDecimal num3 = new BigDecimal(primes[k]);
 
                     if (num1.multiply(num2).multiply(num3).compareTo(top) < 1) {
@@ -56,6 +66,7 @@ System.out.print("\r"+ count + " " + progress[k % 4]);
             }
         }
 // x=3, y=1, z=0
+System.out.println("trips");
         for (int i=0 ; i<primes.length ; i++) {
 
             BigDecimal num1 = new BigDecimal(primes[i]);
@@ -88,6 +99,22 @@ System.out.print("\r"+ count + " " + progress[i % 4]);
             }
         }
         System.out.println("count: " + count);
+    }
+
+    private static int FindNewStart(Integer[] primes, int start, BigDecimal num1, BigDecimal num2, BigDecimal top) {
+        int last_mid = start;
+        int mid = primes.length / 2;
+
+        BigDecimal num3 = new BigDecimal(primes[mid]);
+
+        while (num1.multiply(num2).multiply(num3).compareTo(top) < 1 && mid < primes.length - 1) {
+            mid = ((primes.length - mid) / 2) + mid;
+            num3 = new BigDecimal(primes[mid]);
+            last_mid = mid;
+            break;
+        }
+
+        return last_mid;
     }
 
 }
